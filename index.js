@@ -178,11 +178,7 @@ function baseCommand(cmd, arch) {
 	let scriptPath
 
 	// test undefined, null and empty string
-	if (externalVBSFolderLocation && typeof(externalVBSFolderLocation) === 'string') {
-		scriptPath = externalVBSFolderLocation
-	} else {
-		scriptPath = path.join(__dirname, 'vbs')
-	}
+  scriptPath = externalVBSFolderLocation
 
 	return ['//Nologo', path.join(scriptPath, cmd), arch]
 }
@@ -338,9 +334,9 @@ module.exports.promisified = {
 			module.exports.list(keys, architecture, function(err, res) {
 				if (err) {
 					return reject(err)
-				} 
+				}
 				return resolve(res)
-				
+
 			})
 		})
 	},
@@ -349,9 +345,9 @@ module.exports.promisified = {
 			module.exports.createKey(keys, architecture, function(err) {
 				if (err) {
 					return reject(err)
-				} 
+				}
 				return resolve()
-				
+
 			})
 		})
 	},
@@ -360,9 +356,9 @@ module.exports.promisified = {
 			module.exports.deleteKey(keys, architecture, function(err) {
 				if (err) {
 					return reject(err)
-				} 
+				}
 				return resolve()
-				
+
 			})
 		})
 	},
@@ -371,9 +367,9 @@ module.exports.promisified = {
 			module.exports.deleteValue(keys, architecture, function(err) {
 				if (err) {
 					return reject(err)
-				} 
+				}
 				return resolve()
-				
+
 			})
 		})
 	},
@@ -382,9 +378,9 @@ module.exports.promisified = {
 			module.exports.putValue(map, architecture, function(err) {
 				if (err) {
 					return reject(err)
-				} 
+				}
 				return resolve()
-				
+
 			})
 		})
 	},
